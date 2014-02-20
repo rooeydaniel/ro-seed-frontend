@@ -20,7 +20,7 @@ var roApp = angular.module('roApp', [
                 redirectTo: '/home'
             });
 
-            RestangularProvider.setBaseUrl('http://localhost:8001');
+            RestangularProvider.setBaseUrl('http://cc-ro-seed-backend.herokuapp.com');
     }])
     .run(['$location', '$rootScope', 'baseTitle', '$http', 'Restangular', 'SessionService', function ($location, $rootScope, baseTitle, $http, Restangular, SessionService) {
         $rootScope.$on('$routeChangeSuccess', function (event, current) {

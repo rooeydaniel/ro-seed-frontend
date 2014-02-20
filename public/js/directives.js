@@ -17,7 +17,7 @@ angular.module('roApp.directives', [])
                     };
 
                     //$http.post(constants.serverAddress + "api-token-auth", user_data)
-                    $http.post("http://localhost:8001/api-token-auth/", user_data)
+                    $http.post("http://cc-ro-seed-backend.herokuapp.com/api-token-auth/", user_data)
                         .success(function (response) {
                             $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
                             SessionService.saveSession(response.token);
