@@ -1,0 +1,17 @@
+<div class="container">
+    <!--<div logged-out>
+        <login></login>
+    </div>-->
+
+    <div ng-hide="session">
+        <div login></div>
+    </div>
+
+    <div ng-show="session">
+        <h1>Recipe Organizer Home Page</h1>
+
+        <div>
+            This is the Recipe Organizer default content, should change based on the user's authentication status.
+        </div>
+    </div>
+</div>
