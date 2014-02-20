@@ -22,7 +22,7 @@ var roApp = angular.module('roApp', [
 
             RestangularProvider.setBaseUrl('http://localhost:8001');
     }])
-    .run(['$location', '$rootScope', 'baseTitle', '$http', 'Restangular', function ($location, $rootScope, baseTitle, $http, RestangularProvider) {
+    .run(['$location', '$rootScope', 'baseTitle', '$http', 'Restangular', 'SessionService', function ($location, $rootScope, baseTitle, $http, Restangular, SessionService) {
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             // Check to see if the 'title' attribute exists on the route
             if (current.hasOwnProperty('$route')) {
@@ -39,7 +39,7 @@ var roApp = angular.module('roApp', [
 
 
         // add Auth Token to every Restangular request
-        RestangularProvider.setFullRequestInterceptor(function(element, operation, route, url, headers, params) {
+        Restangular.setFullRequestInterceptor(function(element, operation, route, url, headers, params) {
             if (SessionService.isLoggedIn()) {
                 var token = SessionService.getSession();
                 headers['Authorization'] = 'Token ' + token;
