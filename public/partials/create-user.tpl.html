@@ -1,0 +1,10 @@
+<div class="container">
+    <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Create User</h2>
+        <input type="text" class="form-control" placeholder="First Name" required autofocus ng-model="user.first_name">
+        <input type="text" class="form-control" placeholder="Last Name" required ng-model="user.last_name">
+        <input type="text" class="form-control" placeholder="Email Address" required ng-model="user.email">
+        <input type="password" class="form-control" placeholder="Password" required ng-model="user.password"><br/>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="createUser(user);">Create User</button>
+    </form>
+</div>
